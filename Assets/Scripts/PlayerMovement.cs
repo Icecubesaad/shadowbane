@@ -18,48 +18,51 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        transform.Translate(horizontal * _movementSpeedHorizontal * Time.deltaTime, 0, vertical * movementSpeed * Time.deltaTime);
+
+        // Move the character
+        transform.Translate(horizontal * _movementSpeedHorizontal * Time.deltaTime, 0,
+            vertical * movementSpeed * Time.deltaTime);
+
+        // Check if moving forward
         if (Input.GetKey(KeyCode.W))
         {
+            Debug.Log("Moving Forward");
             _animator.SetBool("walkingForward", true);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            _animator.SetBool("walkingBackward", true);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _animator.SetBool("strafingRight", true);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _animator.SetBool("strafingLeft", true);
         }
         else
         {
-            _animator.SetBool("strafingRight", false);
-            _animator.SetBool("strafingLeft", false);
             _animator.SetBool("walkingForward", false);
+        }
+
+        // Check if moving backward
+        if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("Moving Backward");
+            _animator.SetBool("walkingBackward", true);
+        }
+        else
+        {
             _animator.SetBool("walkingBackward", false);
-            waitForIdle();
         }
+
+        // Handle strafing if needed
+        // if (Input.GetKey(KeyCode.D))
+        // {
+        //     _animator.SetBool("strafingRight", true);
+        // }
+        // else
+        // {
+        //     _animator.SetBool("strafingRight", false);
+        // }
+
+        // if (Input.GetKey(KeyCode.A))
+        // {
+        //     _animator.SetBool("strafingLeft", true);
+        // }
+        // else
+        // {
+        //     _animator.SetBool("strafingLeft", false);
+        // }
     }
 
-    IEnumerator waitForIdle()
-    {
-        while (!checkIfMoving())
-        {
-            yield return new WaitForSeconds(3);
-            _animator.SetBool("idle", true);
-        }
-    }
-
-    bool checkIfMoving()
-    {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            return true;
-        }
-        return false;
-    }
 }
