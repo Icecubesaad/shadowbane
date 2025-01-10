@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - player_weapon
+  - enemy
+  - vampire_weapon
   layers:
   - Default
   - TransparentFX
