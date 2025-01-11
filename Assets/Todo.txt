@@ -1,0 +1,14 @@
+Learn about the character controller movement and the collisions 
+Make the collisions and the animation, decreasing health and death animation for the enemies
+YOUTUBE LINK REFERENCES : 
+https://youtu.be/YR6Q7dUz2uk?si=qut1x-7cLf4C-bB-
+https://youtu.be/e94KggaEAr4?si=K6aoTYu7FSRSZnSc
+https://youtu.be/YzWixqYZL-o?si=64-zviOG0i2EVVi3
+https://youtu.be/s5lRq6-BVcw?si=2ik9Cu_JUvdDD0fR
+
+
+
+THE ATTACKING COMBOS FOR THE PLAYER (IF NECESSARY AND HAVE TIME :) )
+https://youtu.be/Fg6K3niOxlM?si=hCLrJPR2a06JnsOc
+
+
